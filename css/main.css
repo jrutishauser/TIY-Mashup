@@ -105,8 +105,14 @@ body {
 }
 .content img {
 }
-
-
+.button {
+	display: block;
+	margin: 0 auto;
+	width: 100%;
+}
+.quotehere {
+	margin, padding: 0;
+}
 
 
 
