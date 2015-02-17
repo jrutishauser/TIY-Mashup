@@ -1,0 +1,16 @@
+{
+  "manifest_version": x,
+
+  "name": "SusannaBot",
+  "description": "SusannaBot here to listen",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_icon": "img/susanna-bot.png",
+    "default_popup": "index.html"
+  },
+  "permissions": [
+    "activeTab",
+    "https://ajax.googleapis.com/"
+  ]
+}
