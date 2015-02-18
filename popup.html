@@ -5,59 +5,56 @@
  value "popup.html".
  -->
 <html>
-  <head>
-    <title>SusannaBot</title>
-    <style>
-      body {
+
+<head>
+<title>SusannaBot</title>
+<style>
+    body {
         font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
         font-size: 100%;
-      }
-      #status {
+    }
+    #status {
         /* avoid an excessively wide status text */
+
         white-space: pre;
         text-overflow: ellipsis;
         overflow: hidden;
         max-width: 400px;
-      }
-	  body {
-	  	background-image: url('img/stripes.png');
-	 	color: white; 
-		text-shadow: 2px 2px 0 #000;
-	  }
-	  .button {
-	  	width: 100%;
-	  } 
-	  h1 {
-	  	text-align: center;
-		text-shadow: 2px 2px 0 #000;
-	 	color: white; 	   
-	  }	
-	 .content img {
-		box-shadow: 2px 2px 0 #000; 
-	 }	
-	
-	
-	</style>
-    <script src="jquery-2.1.3.js"</script>  
-    <script src="js/popup.js"></script> 
-  </head>
-  <body>
-   		<section class='container'>
-			<section class='content'>
-				<h1>SusannaBot</h1>	
-				<img src='img/susanna-bot.png' alt='Susanna is here to help'>
-				<button id='inspire' class="button inspire" type="button">I need some advice!</button>
-				<button class="button question" type="button">Cuddle Huddle!</button>
-				<button class="button schedule" type="button">Schedule a Meeting with me!</button>
-				<p class='quotehere' id='quotehere'></p>
-			</section>
-		</section>
-		  
-		  
-		  
-			  
-	<script src='js/main.js'></script> 
-	<div id="status"></div>
-  </body>
-</html>
+    }
+    body {
+        background-image: url('img/stripes.png');
+        color: white;
+        text-shadow: 2px 2px 0 #000;
+    }
+    .button {
+        width: 100%;
+    }
+    h1 {
+        text-align: center;
+        text-shadow: 2px 2px 0 #000;
+        color: white;
+    }
+    .content img {
+        box-shadow: 2px 2px 0 #000;
+    }
+</style>
+    <script src="jquery-2.1.3.js" </script>
+        < script src = "js/popup.js" >
+    </script>
+</head>
+<body>
+    <section class='container'>
+        <section class='content'>
+            <h1>SusannaBot</h1>
+            <img src='img/susanna-bot.png' alt='Susanna is here to help'>
+            <button id='inspire' class="button inspire" type="button">I need some advice!</button>
+            <button class="button question" type="button">Cuddle Huddle!</button>
+            <button class="button schedule" type="button">Schedule a Meeting with me!</button>
+            <p class='quotehere' id='quotehere'></p>
+        </section>
+    </section>
+    <script src='js/main.js'></script>
+    <div id="status"></div>
+</body>
 
+</html>
