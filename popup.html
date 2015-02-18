@@ -66,6 +66,10 @@
         margin: 0.5ex auto;
         font-family: inherit;
     }
+	a {
+	color: white;
+	
+	}
 </style>
 	<script src="jquery-2.1.3.js"></script>
 	<!-- <script src ="js/popup.js"></script> -->
@@ -73,8 +77,14 @@
 <body>
     <section class='container'>
         <section class='content'>
+			<section class='slackInfo'>		
+				<p>STOP! Susanna bot needs to know WHO you are before you can
+					cuddle huddle. <a href='https://api.slack.com/web' target='_blank'>
+					Click here</a> scroll to the bottom, generate a token, paste below
+					and click submit</p>	
 				<fieldset><input type='text' id='slackLogin'> 
-						<button type='submit' id='slackButton'>submit</button></fieldset>	
+				<button type='submit' id='slackButton'>submit</button></fieldset>	
+			</section>
 			<h1>SusannaBot</h1>
             <img src='img/susanna-bot.png' alt='Susanna is here to help'>
             <button id='inspire' class="button inspire" type="button">I need some advice!</button>
