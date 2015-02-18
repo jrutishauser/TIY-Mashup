@@ -2,14 +2,14 @@
     var inspirebutton = document.getElementById('inspire');	
 	var quotehere = document.getElementById('quotehere'); 	
 	
-
-
-
-	var quoteDrop = function() {
-		quotehere.innerHTML = 'Youll Never finish this in time';	
-		console.log('wat');	
-	};
-	inspirebutton.onclick = quoteDrop; 
+	var adviceApi = 'http://api.adviceslip.com/advice';
+	$.getJSON( adviceApi, function(advice) {
+			var quoteDrop = function() {
+			$('#quotehere').text(advice.slip.advice);	
+			console.log('wat');	
+		};
+		inspirebutton.onclick = quoteDrop; 	
+	});
 
     
 $('.question').on('click', function (e){
