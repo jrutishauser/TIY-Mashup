@@ -2,14 +2,14 @@
     var inspirebutton = document.getElementById('inspire');	
 	var quotehere = document.getElementById('quotehere'); 	
 	
-
-
-
-	var quoteDrop = function() {
-		quotehere.innerHTML = 'Youll Never finish this in time';	
-		console.log('wat');	
-	};
-	inspirebutton.onclick = quoteDrop; 
+	var adviceApi = 'http://api.adviceslip.com/advice';
+	$.getJSON( adviceApi, function(advice) {
+			var quoteDrop = function() {
+			$('#quotehere').text(advice.slip.advice);	
+			console.log('wat');	
+		};
+		inspirebutton.onclick = quoteDrop; 	
+	});
 
     
 $('.question').on('click', function (e){
@@ -41,6 +41,9 @@ var randomQuestion = function(){
     
 //    
 });
+    
+    $.post('https://slack.com/api/chat.postMessage\?token\=xoxp-3520991751-3641328250-3752113976-71ae8c\&channel\=%23susannabottest\&text\=' + randomQuestion() + '&username\=SusannaBot\&icon_emoji\=%3Amonkey_face%3A\&pretty\=1');
+})
 
 
 
