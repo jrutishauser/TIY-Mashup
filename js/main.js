@@ -24,13 +24,23 @@ $('.question').on('click', function (e){
     'Which season(fall, winter, spring, summer) would you want to be all year long?',
     'What movie/TV/book character would you choose to be for a day?',
     'If you could choose a super power, what would it be and why?',
-    'Are you a cat or a dog person, and why did you choose cat?'
+    'Are you a cat or a dog person, and why did you choose cat?',
+    'You win a free (up-to) 3-topping pizza, what do you choose?'
 ];
 
 var randomQuestion = function(){
     return questions[Math.floor(Math.random()*questions.length)];
-}  
+};  
+    $('#quotehere').text(randomQuestion);
+    $('#quotehere').append('<fieldset><input id="answer" type="text" placeholder="Answer here">' + 
+                           '<input id="submit" type="submit" value="Slack It!"></input></input></fieldset>');
+    $('#submit').on('click', function(event){
+//        var ans = $('#answer').val();
+        $.post('https://slack.com/api/chat.postMessage\?token\=xoxp-3520991751-3641328250-3752113976-71ae8c\&channel\=%23susannabottest\&text\=' + randomQuestion() + '&username\=SusannaBot\&icon_emoji\=%3Amonkey_face%3A\&pretty\=1');
+    })
     
-    $.post('https://slack.com/api/chat.postMessage\?token\=xoxp-3520991751-3641328250-3752113976-71ae8c\&channel\=%23susannabottest\&text\=' + randomQuestion() + '&username\=SusannaBot\&icon_emoji\=%3Amonkey_face%3A\&pretty\=1');
-})
+//    
+});
+
+
 
