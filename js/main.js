@@ -10,7 +10,10 @@
 		};
 		inspirebutton.onclick = quoteDrop; 	
 	});
-
+	
+	$('.schedule').on('click', function(){
+		window.open("https://calendly.com/susanna", '_blank');			
+	});
     
 $('.question').on('click', function (e){
     
