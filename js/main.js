@@ -32,14 +32,18 @@ var randomQuestion = function(){
     return questions[Math.floor(Math.random()*questions.length)];
 };  
     $('#quotehere').text(randomQuestion);
-    $('#quotehere').append('<fieldset><input id="answer" type="text" placeholder="Answer here">' + 
+    var currentQ = $('#quotehere').text(); 
+	$('#quotehere').append('<fieldset><input id="answer" type="text" placeholder="Answer here">' + 
                            '<input id="submit" type="submit" value="Slack It!"></input></input></fieldset>');
     $('#submit').on('click', function(event){
-//        var ans = $('#answer').val();
-        $.post('https://slack.com/api/chat.postMessage\?token\=xoxp-3520991751-3641328250-3752113976-71ae8c\&channel\=%23susannabottest\&text\=' + randomQuestion() + '&username\=SusannaBot\&icon_emoji\=%3Amonkey_face%3A\&pretty\=1');
-    })
+        var ans = $('#answer').val();
+        $.post('https://slack.com/api/chat.postMessage\?token\=' +
+		'xoxp-3520991751-3641328250-3752113976-71ae8c\&channel\=%2' +
+		'3susannabottest\&text\=' + currentQ + '  ' + ans + '&username\=' + 
+		'SusannaBot\&icon_emoji\=%3Amonkey_face%3A\&pretty\=1');
+	$('#quotehere').empty();	
+	});
     
-//    
 });
     
 
