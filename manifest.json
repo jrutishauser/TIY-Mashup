@@ -12,5 +12,10 @@
   "permissions": [
     "activeTab",
     "https://ajax.googleapis.com/"
-  ]
+  ],
+    "icons": {
+        "16": "img/susanna-bot.png",
+        "48": "img/susanna-bot.png",
+        "128": "img/susanna-bot.png"
+    }
 }
