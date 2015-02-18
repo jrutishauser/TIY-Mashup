@@ -1,7 +1,13 @@
 var inspirebutton = document.getElementById('inspire');
 var quotehere = document.getElementById('quotehere');
-
 var adviceApi = 'http://api.adviceslip.com/advice';
+var slackToken;
+
+$('#slackButton').on('click', function(a){
+	slackToken = $('#slackLogin').val();
+});
+
+
 $.getJSON(adviceApi, function (advice) {
     var quoteDrop = function () {
         $('#quotehere').text(advice.slip.advice);
@@ -40,7 +46,7 @@ $('.question').on('click', function (e) {
     $('#submit').on('click', function (event) {
         var ans = $('#answer').val();
         $.post('https://slack.com/api/chat.postMessage\?token\=' +
-            'xoxp-3520991751-3641328250-3752113976-71ae8c\&channel\=%2' +
+            slackToken + '\&channel\=%2' +
             '3susannabottest\&text\=' + '>' + currentQ + '  ' + '*' +
             ans + '*' + '&username\=' + 'SusannaBot\&icon_emoji\=%3Amonkey_face%3A\&pretty\=1');
         $('#quotehere').empty();
