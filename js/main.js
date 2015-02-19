@@ -21,8 +21,6 @@ chrome.storage.local.get('myValue', function(result){
 	slackToken(result.myValue);
 });
 
-
-
 $.getJSON(adviceApi, function (advice) {
     var quoteDrop = function () {
         $('#quotehere').text(advice.slip.advice);
@@ -63,8 +61,10 @@ $('.question').on('click', function (e) {
         var ans = $('#answer').val();
         $.post('https://slack.com/api/chat.postMessage\?token\=' +
             slackToken + '\&channel\=%2' +
-            '3susannabottest\&text\=' + '>' + currentQ + '  ' + '*' +
-            ans + '*' + '&username\=' + 'SusannaBot\&icon_url\=' + slackPic + '\&pretty\=1');        $('#quotehere').empty();
+            '3orl_jan2015_frontend\&text\=' + '>' + currentQ + '  ' + '*' +
+            ans + '*' + '&username\=' + 'SusannaBot\&icon_url\=' + slackPic +
+            '\&pretty\=1');
+        $('#quotehere').empty();
     }); // onclick for submit answer to slack button
 
 }); //onclick for generating a random question
