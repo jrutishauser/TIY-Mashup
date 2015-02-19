@@ -40,7 +40,8 @@ $('.question').on('click', function (e) {
         return questions[Math.floor(Math.random() * questions.length)];
     };
     $('#quotehere').text(randomQuestion);
-    var currentQ = $('#quotehere').text();
+    var currentQ = $('#quotehere').text(),
+        slackPic = 'https://raw.githubusercontent.com/jrutishauser/TIY-Mashup/master/img/susanna-bot.png';
     $('#quotehere').append('<fieldset><input id="answer" type="text" placeholder="Answer here">' +
         '<input id="submit" type="submit" value="Slack It!"></input></input></fieldset>');
     $('#submit').on('click', function (event) {
@@ -48,8 +49,7 @@ $('.question').on('click', function (e) {
         $.post('https://slack.com/api/chat.postMessage\?token\=' +
             slackToken + '\&channel\=%2' +
             '3susannabottest\&text\=' + '>' + currentQ + '  ' + '*' +
-            ans + '*' + '&username\=' + 'SusannaBot\&icon_emoji\=%3Amonkey_face%3A\&pretty\=1');
-        $('#quotehere').empty();
+            ans + '*' + '&username\=' + 'SusannaBot\&icon_url\=' + slackPic + '\&pretty\=1');        $('#quotehere').empty();
     }); // onclick for submit answer to slack button
 
 }); //onclick for generating a random question
