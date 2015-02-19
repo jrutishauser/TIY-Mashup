@@ -5,9 +5,10 @@ var slackToken;
 
 $('#slackButton').on('click', function(a){
 	slackToken = $('#slackLogin').val();
-    chrome.storage.sync.set({myValue: slackToken}, function(){
+	chrome.storage.local.set({myValue: slackToken}, function(){
         console.log("myValue: " + slackToken);
     });
+	$('.slackInfo').empty();
 });
 
 chrome.storage.onChanged.addListener(function(changes, namespace){
@@ -15,6 +16,11 @@ chrome.storage.onChanged.addListener(function(changes, namespace){
         slackToken(changes.myValue.newValue);
     }
 });
+
+chrome.storage.local.get('myValue', function(result){
+	slackToken(result.myValue);
+});
+
 
 
 $.getJSON(adviceApi, function (advice) {
