@@ -5,6 +5,15 @@ var slackToken;
 
 $('#slackButton').on('click', function(a){
 	slackToken = $('#slackLogin').val();
+    chrome.storage.sync.set({myValue: slackToken}, function(){
+        console.log("myValue: " + slackToken);
+    });
+});
+
+chrome.storage.onChanged.addListener(function(changes, namespace){
+    if(changes.myValue){
+        slackToken(changes.myValue.newValue);
+    }
 });
 
 
